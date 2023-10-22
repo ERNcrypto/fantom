@@ -1,4 +1,3 @@
-# fantom
 #    Install fantom
     sudo apt update
     sudo apt install screen -y
