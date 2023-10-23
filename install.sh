@@ -16,7 +16,7 @@ git checkout release/1.1.3-rc.5
 make
 
 cd build/
-wget https://download.fantom.network/mainnet-171200-pruned-mpt.g
+wget https://download.fantom.network/mainnet-109331-full-mpt.g
 
 sudo tee <<EOF >/dev/null /etc/systemd/system/fantom.service
 [Unit]
@@ -25,7 +25,7 @@ After=network.target
 [Service]
 User=$USER
 Type=simple
-ExecStart=/root/go-opera/build/opera --genesis /root/go-opera/build/mainnet-171200-pruned-mpt.g --identity ERN --cache 8096 --http --http.addr 0.0.0.0 --http.corsdomain '*' --http.vhosts "*" --http.api "eth,net,web3" 
+ExecStart=/root/go-opera/build/opera --genesis /root/go-opera/build/mainnet-109331-full-mpt.g --identity ERN --cache 8096 --http --http.addr 0.0.0.0 --http.corsdomain '*' --http.vhosts "*" --http.api "eth,net,web3" 
 Restart=on-failure
 LimitNOFILE=65535
 [Install]
