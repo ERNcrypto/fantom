@@ -12,7 +12,7 @@ source .bash_profile
 
 git clone https://github.com/Fantom-foundation/go-opera.git
 cd go-opera/
-git checkout release/1.1.3-rc.5
+git checkout release/txtracing/1.1.3-rc.5
 make
 
 cd build/
@@ -25,7 +25,7 @@ After=network.target
 [Service]
 User=$USER
 Type=simple
-ExecStart=/root/go-opera/build/opera --genesis /root/go-opera/build/mainnet-109331-full-mpt.g --identity ERN --cache 8096 --http --http.addr 0.0.0.0 --http.corsdomain '*' --http.vhosts "*" --http.api "eth,net,web3" --tracenode
+ExecStart=/root/go-opera/build/opera --genesis /root/go-opera/build/mainnet-109331-full-mpt.g --identity ERN --cache 8096 --http --http.addr="127.0.0.1" --http.port=8080 --http.corsdomain '*' --http.vhosts "*" --http.api=eth,web3,net,txpool,ftm,trace --tracenode --db.preset=ldb-1
 Restart=on-failure
 LimitNOFILE=65535
 [Install]
