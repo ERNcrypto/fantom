@@ -25,7 +25,7 @@ After=network.target
 [Service]
 User=$USER
 Type=simple
-ExecStart=/root/go-opera/build/opera --genesis /root/go-opera/build/mainnet-109331-full-mpt.g --identity ERN --cache 8096 --http --http.addr 0.0.0.0 --http.corsdomain '*' --http.vhosts "*" --http.api "eth,net,web3" 
+ExecStart=/root/go-opera/build/opera --genesis /root/go-opera/build/mainnet-109331-full-mpt.g --identity ERN --cache 8096 --http --http.addr 0.0.0.0 --http.corsdomain '*' --http.vhosts "*" --http.api "eth,net,web3" --tracenode
 Restart=on-failure
 LimitNOFILE=65535
 [Install]
